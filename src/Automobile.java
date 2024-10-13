@@ -4,10 +4,10 @@ import java.util.concurrent.TimeUnit;
 public class Automobile implements Runnable {
 
     private String nome;
-    private ParcheggioMultiPosto parcheggio;
+    private Parcheggio parcheggio;
     
     // costruttore dell'automobile
-    public Automobile(String nome, ParcheggioMultiPosto parcheggio) {
+    public Automobile(String nome, Parcheggio parcheggio) {
         this.nome = nome;
         this.parcheggio = parcheggio;
     }

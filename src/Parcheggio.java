@@ -1,10 +1,11 @@
 
-public class ParcheggioMultiPosto { // realizzato con un Semaforo di Dijkstra
+public class Parcheggio { // realizzato con un Semaforo Mutex (di Dijkstra con valore 1)
 
+    static final int MUTEX = 1;
     private int postiDisponibili;
 
     // costruttore del Semaforo
-    public ParcheggioMultiPosto (int postiDisponibili){
+    public Parcheggio (int postiDisponibili){
 
         this.postiDisponibili = postiDisponibili;            
     }
