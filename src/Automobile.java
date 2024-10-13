@@ -6,6 +6,7 @@ public class Automobile implements Runnable {
     private String nome;
     private ParcheggioConPostiRiservati parcheggio;
     
+    // costruttore dell'automobile
     public Automobile(String nome, ParcheggioConPostiRiservati parcheggio) {
         this.nome = nome;
         this.parcheggio = parcheggio;
