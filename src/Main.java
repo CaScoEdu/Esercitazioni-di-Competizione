@@ -2,10 +2,10 @@ public class Main {
     
     public static void main(String[] args) throws Exception {
 
-        final Parcheggio PARCHEGGIO = new Parcheggio(Parcheggio.MUTEX);
+        final Ponte PONTE = new Ponte(Ponte.MUTEX);
         
-        final int NUMERO_VEICOLI = 10;
-        for (int i=1; i <= NUMERO_VEICOLI; i++)
-            new Thread(new Automobile("auto"+i, PARCHEGGIO)).start();
+        final int NUMERO_AUTOMOBILI = 8;
+        for (int i=1; i <= NUMERO_AUTOMOBILI; i++)
+            new Thread(new Automobile("auto"+i, PONTE)).start();
     }
 }

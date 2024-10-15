@@ -4,12 +4,12 @@ import java.util.concurrent.TimeUnit;
 public class Automobile implements Runnable {
 
     private String nome;
-    private Parcheggio parcheggio;
+    private Ponte ponte;
     
     // costruttore dell'automobile
-    public Automobile(String nome, Parcheggio parcheggio) {
+    public Automobile(String nome, Ponte ponte) {
         this.nome = nome;
-        this.parcheggio = parcheggio;
+        this.ponte = ponte;
     }
 
     @Override
@@ -21,19 +21,19 @@ public class Automobile implements Runnable {
 
             TimeUnit.SECONDS.sleep(RANDOM.nextInt(2));
 
-            // richiesta parcheggio
-            System.out.println(this.toString() + " sta richiedendo il parcheggio");
+            // richiesta (accesso al) ponte
+            System.out.println(this.toString() + " vuole accedere al ponte");
 
             // INIZIO SEZIONE CRITICA IN MUTUA ESCLUSIONE
-            parcheggio.richiedi();
+            ponte.richiedi();
 
-            // utilizzo parcheggio
-            System.out.println(this.toString() + " sta sostando nel parcheggio");
+            // utilizzo ponte
+            System.out.println(this.toString() + " sta transitando sul ponte");
             TimeUnit.SECONDS.sleep(RANDOM.nextInt(5));
 
-            // rilascio parcheggio
-            System.out.println(this.toString() + " sta liberando il parcheggio");
-            parcheggio.rilascia();
+            // rilascio ponte (uscita dal ponte)
+            System.out.println(this.toString() + " sta uscendo dal ponte");
+            ponte.rilascia();
             
             // FINE SEZIONE CRITICA IN MUTUA ESCLUSIONE
 
