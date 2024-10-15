@@ -4,8 +4,8 @@ public class Main {
 
         final Parcheggio PARCHEGGIO = new Parcheggio(Parcheggio.MUTEX);
         
-        final int NUMERO_VEICOLI = 10;
-        for (int i=1; i <= NUMERO_VEICOLI; i++)
+        final int NUMERO_AUTOMOBILI = 10;
+        for (int i=1; i <= NUMERO_AUTOMOBILI; i++)
             new Thread(new Automobile("auto"+i, PARCHEGGIO)).start();
     }
 }
