@@ -23,6 +23,8 @@ public class Automobile implements Runnable {
 
             // richiesta parcheggio
             System.out.println(this.toString() + " sta richiedendo il parcheggio");
+
+            // INIZIO SEZIONE CRITICA IN MUTUA ESCLUSIONE
             parcheggio.richiedi();
 
             // utilizzo parcheggio
@@ -32,6 +34,8 @@ public class Automobile implements Runnable {
             // rilascio parcheggio
             System.out.println(this.toString() + " sta liberando il parcheggio");
             parcheggio.rilascia();
+            
+            // FINE SEZIONE CRITICA IN MUTUA ESCLUSIONE
 
         } catch (InterruptedException e) {
             e.printStackTrace();
