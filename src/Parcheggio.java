@@ -5,9 +5,9 @@ public class Parcheggio { // realizzato con un Semaforo di Dijkstra
     private int postiDisponibili;
 
     // costruttore del Semaforo
-    public Parcheggio (int postiDisponibili){
+    public Parcheggio (final int POSTI_DISPONIBILI){
 
-        this.postiDisponibili = postiDisponibili;            
+        this.postiDisponibili = POSTI_DISPONIBILI;            
     }
 
     // richiesta risorsa (WAIT del Semaforo)
