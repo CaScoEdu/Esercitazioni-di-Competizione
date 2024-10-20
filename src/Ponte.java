@@ -6,9 +6,9 @@ public class Ponte { // realizzato con un Semaforo Mutex
     private int autoChePossonoAccedere;
 
     // costruttore del Semaforo
-    public Ponte (int autoChePossonoAccedere){
+    public Ponte (final int AUTO_CHE_POSSONO_ACCEDERE){
 
-        this.autoChePossonoAccedere = autoChePossonoAccedere;            
+        this.autoChePossonoAccedere = AUTO_CHE_POSSONO_ACCEDERE;            
     }
 
     // richiesta risorsa (WAIT del Semaforo)

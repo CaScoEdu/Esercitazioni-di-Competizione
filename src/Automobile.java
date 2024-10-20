@@ -3,13 +3,13 @@ import java.util.concurrent.TimeUnit;
 
 public class Automobile implements Runnable {
 
-    private String nome;
-    private Ponte ponte;
+    final private String NOME;
+    final private Ponte PONTE;
     
     // costruttore dell'automobile
-    public Automobile(String nome, Ponte ponte) {
-        this.nome = nome;
-        this.ponte = ponte;
+    public Automobile(final String NOME, final Ponte PONTE) {
+        this.NOME = NOME;
+        this.PONTE = PONTE;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class Automobile implements Runnable {
             System.out.println(this.toString() + " vuole accedere al ponte");
 
             // INIZIO SEZIONE CRITICA IN MUTUA ESCLUSIONE
-            ponte.richiedi();
+            PONTE.richiedi();
 
             // utilizzo ponte
             System.out.println(this.toString() + " sta transitando sul ponte");
@@ -33,7 +33,7 @@ public class Automobile implements Runnable {
 
             // rilascio ponte (uscita dal ponte)
             System.out.println(this.toString() + " sta uscendo dal ponte");
-            ponte.rilascia();
+            PONTE.rilascia();
             
             // FINE SEZIONE CRITICA IN MUTUA ESCLUSIONE
 
@@ -44,7 +44,7 @@ public class Automobile implements Runnable {
 
     @Override
     public String toString() {
-        return "Automobile " + nome;
+        return "Automobile " + NOME;
     }
 
 }
