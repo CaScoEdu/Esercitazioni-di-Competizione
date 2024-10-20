@@ -3,13 +3,13 @@ import java.util.concurrent.TimeUnit;
 
 public class Automobile implements Runnable {
 
-    private String nome;
-    private Parcheggio parcheggio;
+    final private String NOME;
+    final private Parcheggio PARCHEGGIO;
     
     // costruttore dell'automobile
-    public Automobile(String nome, Parcheggio parcheggio) {
-        this.nome = nome;
-        this.parcheggio = parcheggio;
+    public Automobile(final String NOME, final Parcheggio PARCHEGGIO) {
+        this.NOME = NOME;
+        this.PARCHEGGIO = PARCHEGGIO;
     }
 
     @Override
@@ -23,7 +23,7 @@ public class Automobile implements Runnable {
 
             // richiesta parcheggio
             System.out.println(this.toString() + " sta richiedendo il parcheggio");
-            parcheggio.richiedi();
+            PARCHEGGIO.richiedi();
 
             // utilizzo parcheggio
             System.out.println(this.toString() + " sta sostando nel parcheggio");
@@ -31,7 +31,7 @@ public class Automobile implements Runnable {
 
             // rilascio parcheggio
             System.out.println(this.toString() + " sta liberando il parcheggio");
-            parcheggio.rilascia();
+            PARCHEGGIO.rilascia();
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -40,7 +40,7 @@ public class Automobile implements Runnable {
 
     @Override
     public String toString() {
-        return "Automobile " + nome;
+        return "Automobile " + NOME;
     }
 
 }
